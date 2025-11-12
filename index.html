@@ -449,6 +449,57 @@
       transform: scale(1.05);
     }
 
+      /* ===== Modal de vídeo ===== */
+    .video-player{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.85);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:2000;
+      animation:fadeIn .25s ease-out;
+    }
+    .video-container{
+      width:min(92vw,900px);
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      background:#000;
+      box-shadow:0 10px 40px rgba(0,0,0,.45);
+    }
+    .video-container video{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .video-container iframe{
+      width:100%;
+      height:min(70vh, 520px);
+      border:0;
+      display:block;
+     }
+
+    .video-close{
+      position:absolute;
+      top:12px;
+      left:12px;
+      background:rgba(0,0,0,.65);
+      color:#fff;
+      border:none;
+      border-radius:999px;
+      padding:6px 14px;
+      font-size:14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      z-index:10;
+    }
+    .video-close:hover{
+      background:rgba(0,0,0,.85);
+    }
+
     /* ===== Seção Chef Apresentação ajustada ===== */
     .chef-apresentacao {
       max-width: 1000px;
@@ -567,7 +618,7 @@
         <h2 class="section-title">Categorias</h2>
         <p class="section-subtitle">Explore o mundo do iogurte artesanal.</p>
 
-        <div class="categoria-card" onclick="window.open('https://drive.google.com/drive/folders/1rHcbynaCwxv3T_xoJ8uw2Hng-N2xacoA?usp=drive_link', '_blank')">
+        <div class="categoria-card" onclick="window.open('https://drive.google.com/drive/folders/1_AD2KGY52qhCcHRJrz0lPtUMFhuAKW8u', '_blank')">
             <h3>E-book Exclusivo</h3>
             <p>Baixe agora e descubra segredos de grandes chefs!</p>
             <span class="receitas-count">Clique para acessar</span>
@@ -651,13 +702,13 @@
     const receitasPorCategoria = {
       1: [
         { nome:"Taça de Morango com Iogurte Natural e Leite Ninho", descricao:"Camadas cremosas de iogurte natural com morangos frescos e o toque adocicado do leite em pó.", imagem:"Frutas naturais/TAÇA DE IOGURTE COM MORANGO.jpeg", video:"https://drive.google.com/file/d/1Fru06J2wWwaPCnkNPkZVajaYTZZqr519/view?usp=drive_link" },
-        { nome:"Smoothie de Iogurte com Frutas", descricao:"Bebida cremosa e gelada feita com iogurte e frutas variadas — perfeita para o café da manhã", imagem:"Frutas naturais/SMOOTHIE DE IOGUTE COM FRUTAS.jpeg", video:"https://drive.google.com/file/d/1_edqdlP4d‑QGPZpNitHOgH8FoUFYNXU_/view?usp=drive_link" },
-        { nome:"Salada de Frutas com Iogurte", descricao:"Mix colorido de frutas com iogurte natural — leve, nutritivo e pronto em minutos.", imagem:"Frutas naturais/SALADA DE FRUTAS COM IOGURT.png", video:"https://drive.google.com/file/d/1H_ddpiASRxKM‑mqgj8Sgdaq4kDWN82_f/view?usp=drive_link" },
-        { nome:"Picolé de Iogurte com Frutas Vermelhas", descricao:"Sobremesa congelada e saudável, com o sabor marcante das frutas vermelhas e o frescor do iogurte.", imagem:"Frutas naturais/PICOLE DE IOGURTE COM FRUTAS VERMELHAS.jpeg", video:"https://drive.google.com/file/d/1FtXHPcubo6KR0V‑GZnZIjLhWFOum5_cSm/view?usp=drive_link" },
+        { nome:"Smoothie de Iogurte com Frutas", descricao:"Bebida cremosa e gelada feita com iogurte e frutas variadas — perfeita para o café da manhã", imagem:"Frutas naturais/SMOOTHIE DE IOGUTE COM FRUTAS.jpeg", video:"https://drive.google.com/file/d/1_edqdlP4d-QGPZpNitHOgH8FoUFYNXU_/view?usp=drive_link" },
+        { nome:"Salada de Frutas com Iogurte", descricao:"Mix colorido de frutas com iogurte natural — leve, nutritivo e pronto em minutos.", imagem:"Frutas naturais/SALADA DE FRUTAS COM IOGURT.png", video:"https://drive.google.com/file/d/1H_ddpiASRxKM-mqgj8Sgdaq4kDWN82_f/view?usp=drive_link" },
+        { nome:"Picolé de Iogurte com Frutas Vermelhas", descricao:"Sobremesa congelada e saudável, com o sabor marcante das frutas vermelhas e o frescor do iogurte.", imagem:"Frutas naturais/PICOLE DE IOGURTE COM FRUTAS VERMELHAS.jpeg", video:"https://drive.google.com/file/d/1FtXHPcubo6KR0V-GnZIjLhWFOum5_cSm/view?usp=drive_link" },
         { nome:"Iogurte Natural Integral", descricao:"Iogurte puro, cremoso e consistente, ideal para consumir puro ou em receitas.", imagem:"Frutas naturais/IOGURTE NATURAL INTEGRAL.jpeg", video:"https://drive.google.com/file/d/14rY13gQd5Mxy7du0qjeVBzp0jYjV3cKG/view?usp=drive_link" },
-        { nome:"Iogurte Natural Desnatado", descricao:"Versão leve do iogurte natural, com menos gordura, sem perder sabor nem textura.", imagem:"Frutas naturais/IOGURTE DESNATADO.png", video:"https://drive.google.com/file/d/1ODqaPSbv0botGzCEEFkVO85Q3L8‑mQzc/view?usp=drive_link" },
+        { nome:"Iogurte Natural Desnatado", descricao:"Versão leve do iogurte natural, com menos gordura, sem perder sabor nem textura.", imagem:"Frutas naturais/IOGURTE DESNATADO.png", video:"https://drive.google.com/file/d/1ODqaPSbv0botGzCEEFkVO85Q3L8-mQzc/view?usp=drive_link" },
         { nome:"Iogurte de Chia com Morango", descricao:"Mistura funcional e refrescante com iogurte, morango e sementes de chia para mais saciedade.", imagem:"Frutas naturais/IOGURTE DE CHIA COM MORANGO.jpeg", video:"https://drive.google.com/file/d/1kzicsEWiwE9xyp1uptNfoSkWIo907xIe/view?usp=drive_link" },
-        { nome:"Iogurte com Aveia, Chia e Banana", descricao:"Copo energético e nutritivo feito com iogurte natural, banana madura, chia e aveia.", imagem:"Frutas naturais/IOGURTE COM AVEIA CHIA E BANANA.jpeg", video:"https://drive.google.com/file/d/1Rtat‑q5U7vAHB7yPO31fD5CEoQ4OrYvR/view?usp=drive_link" },
+        { nome:"Iogurte com Aveia, Chia e Banana", descricao:"Copo energético e nutritivo feito com iogurte natural, banana madura, chia e aveia.", imagem:"Frutas naturais/IOGURTE COM AVEIA CHIA E BANANA.jpeg", video:"https://drive.google.com/file/d/1_wJw0hK0SoPk5fP99lQqA9YlI0A49Mia/view?usp=drive_link" },
         { nome:"Iorgute Natural frutas vermelhas", descricao:"O melhor iorgute de frutas vermelhas", imagem:"Frutas naturais/sorvete-de-iogurte-natural-com-frutas-vermelhas.jpg", video:"https://drive.google.com/file/d/1KixPQlds7mLaInjTg67r974qDaJB2Vz6/view?usp=drive_link" },
         { nome:"Pannacotta De Iorgute", descricao:"Esta receita é incrivel", imagem:"Frutas naturais/panacota de morango.jpeg", video:"https://drive.google.com/file/d/166twxL8FS9opGb9z8k6cTdRzy-wbX7HA/view?usp=drive_link" }
       ],
