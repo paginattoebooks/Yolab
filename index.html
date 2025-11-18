@@ -601,6 +601,17 @@
         <button class="nav-link" onclick="irParaAulas()">Aulas</button>
       </nav>
     </header>
+
+    <section class="chef-apresentacao">
+      <div class="chef-img-container">
+        <img class="chef-img" src="banner.png" alt="Chef Ana Russo"> <!-- substitua caminho se diferente -->
+      </div>
+
+        <a href="https://somasoundsolutions.mycartpanda.com/checkout/202446809:1" class="botao-garantir" target="_blank" rel="noopener">
+          ✅ Garantir Agora
+        </a>
+      </div>
+    </section>
     
     <main>
       <section class="categorias-section" id="categorias">
@@ -638,28 +649,16 @@
             <div class="categoria-img"><img src="vegano/Gemini_Generated_Image_35640d35640d3564.png" alt="Vegano"></div>
             <h3>Vegano</h3>
             <p>Alternativas com leites vegetais.</p>
-            <div class="categoria-lock"><span>🔒 Liberada dia 18/11 às 18:00</span></div>
           </div>
 
           <div class="categoria-card" onclick="abrirCategoria('Infantil',5)">
             <div class="categoria-img"><img src="kids/Gemini_Generated_Image_q5ctbhq5ctbhq5ct.png" alt="Infantil"></div>
             <h3>Infantil</h3>
             <p>Receitas suaves e nutritivas para crianças.</p>
-            <div class="categoria-lock"><span>🔒 Liberada dia 19/11 às 18:00</span></div>
+            <div class="categoria-lock"><span>🔒 Liberada dia 16/11 às 18:00</span></div>
           </div>
         </div>
       </section>
-
-       <section class="chef-apresentacao">
-      <div class="chef-img-container">
-        <img class="chef-img" src="banner.png" alt="Chef Ana Russo"> <!-- substitua caminho se diferente -->
-      </div>
-
-        <a href="https://somasoundsolutions.mycartpanda.com/checkout/202446809:1" class="botao-garantir" target="_blank" rel="noopener">
-          ✅ Garantir Agora
-        </a>
-      </div>
-    </section>
 
       <section class="receitas-section hidden" id="receitas">
         <button class="btn-voltar" onclick="voltarCategorias()">← Voltar</button>
@@ -736,7 +735,18 @@
         { nome:"Tzatziki (pasta de iogurte grego)", descricao:"Molho fresco mediterrâneo com pepino.", imagem:"estilo grego/Tzatziki - Pasta de iogurte grego.jpg", video:"https://drive.google.com/file/d/1U-fQmyek_josBy8UvmkXgjmNdMj0-uob/view?usp=drive_link" },
         { nome:"Yakult com o soro do iogurte grego", descricao:"Probiótico suave com toque cítrico.", imagem:"estilo grego/YAKULT COM O SORO DO IOGURTE GREGO.jpeg", video:"https://drive.google.com/file/d/1QmNen865qMwp2A19ZorSeSEgFNCZdKtr/view?usp=drive_link" }
       ],
-      4: [ /* ... */ ],
+      4: [
+        { nome:"Iogurte de Amendoim", descricao:"Cremoso, proteico, leve e nutritivo.", imagem:"vegano/IOGURTE DE AMENDOIN.jpeg", video:"https://drive.google.com/file/d/1LWrFZ8zpUK3FmYgr8JKO6NsUJ3K6Aimm/view?usp=drive_link" },
+        { nome:"Iogurte de Caju", descricao:"Sabor suave, textura leve e sedosa.", imagem:"vegano/IOGURTE DE CAJU.jpeg", video:"https://drive.google.com/file/d/1B8vZyA4pXc-TlKxW1iRCsCyiqHh7JV1N/view?usp=drive_link" },
+        { nome:"Iogurte de Coco Saboroso", descricao:"Coco cremoso com toque tropical.", imagem:"vegano/IOGURTE DE COCO SABOROSO.jpeg", video:"https://drive.google.com/file/d/1Nh23myP6gudFOqHn4IcIqPKxFdWjn6gO/view?usp=drive_link" },
+        { nome:"Iogurte de Coco Seco", descricao:"Fermentado denso com sabor marcante.", imagem:"vegano/IOGURTE DE COCO SECO.jpeg", video:"https://drive.google.com/file/d/1kpz6kx5q1boUcuLh5EAh_N-xu2E1QotW/view?usp=drive_link" },
+        { nome:"Iogurte Fermentado com o Cabinho da Pimenta", descricao:"Notas picantes suaves e funcionais.", imagem:"vegano/IOGURTE FERMENTADO COM O CABINHO DA PIMENTA.jpeg", video:"https://drive.google.com/file/d/11cblXhdskmI3ZgHhJKiimgBaXtPVgUVx/view?usp=drive_link" },
+        { nome:"Iogurte Vegano de Castanhas e Coco", descricao:"Mistura cremosa vegetal, sabor equilibrado.", imagem:"vegano/IOGURTE VEGANO DE CASTANHAS E COCO.jpeg", video:"https://drive.google.com/file/d/1IEqbcQVZueNXsS4KY5QgHl3sflJTJtoH/view?usp=drive_link" },
+        { nome:"Iogurte de Inhame com Morango", descricao:"Cremoso natural com frescor frutado.", imagem:"vegano/iogurte-inhame-com-morango.jpeg", video:"https://drive.google.com/file/d/1XxoUNwb2gTxcmKzUoZ495wz5QZUP2Uct/view?usp=drive_link",},
+        { nome:"", descricao:"", imagem:"", video:"" },
+        { nome:"", descricao:"", imagem:"", video:"" },
+        { nome:"", descricao:"", imagem:"", video:"" }
+      ],
       5: [ /* ... */ ]
     };
 
@@ -844,8 +854,7 @@
 
     /* ======= Funções nav + bloqueios ======= */
     const releaseSchedule = {
-      4: new Date('2025‑11‑18T18:00:00'),
-      5: new Date('2025‑11‑19T18:00:00')
+      5: new Date('2025‑11‑16T18:00:00')
     };
     let agora = new Date();
 
@@ -860,3 +869,4 @@
   </script>
 </body>
 </html>
+
