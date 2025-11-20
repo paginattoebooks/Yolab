@@ -851,15 +851,12 @@
       `;
       document.body.appendChild(wrap);
     }
-
-    function fecharEbookViewer(){
-      const modal = document.querySelector('.ebook-viewer');
-      if(modal){
-        modal.remove();
-      }
-    }
-    };
-    let agora = new Date();
+  function fecharEbookViewer(){
+  const modal=document.querySelector('.ebook-viewer');
+  if(modal){ modal.remove(); }
+  }
+    
+  let agora = new Date();
 
     window.abrirCategoria = abrirCategoria;
     window.voltarCategorias = voltarCategorias;
@@ -869,7 +866,9 @@
       document.body.classList.remove('lock');
       voltarCategorias();
     };
+    
   </script>
+  
 </body>
 </html>
 
